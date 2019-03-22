@@ -4,6 +4,11 @@ import { product } from './Products';
 import { Swipeable} from 'react-swipeable';
 import Header from './Header';
 import './App.css';
+import Second from './Second';
+import Nav from './Navigation';
+import Info from './ProductInfo';
+import Basket from './Basket';
+import { Route, Link, Switch } from 'react-router-dom';
 
 let rails = [];
 
@@ -15,7 +20,8 @@ class App extends Component  {
         this.state = {
 //Stores which slide is currently visible
             currentIndex : 0,
-            rail: []
+            rail: [],
+            itemList: []
         }
         this.swipeRight = this.swipeRight.bind(this);
         this.swipeLeft = this.swipeLeft.bind(this);
@@ -55,15 +61,20 @@ class App extends Component  {
     })
    
  }
+
+
+
 //-----------------------------------------------------------------
 
 // componentDidMount() {
-//     fetch('https://4pdmal789f.execute-api.eu-west-1.amazonaws.com/Prod/api/test/database', {mode: 'no-cors'})
-//     .then(res => res.json())
-//         .catch(error => console.log(error))
-//         .then(myjson => {
-//             JSON.stringify(myjson)
+//     axios.get("https://4pdmal789f.execute-api.eu-west-1.amazonaws.com/Prod/api/test/database")
+//     .then(res => {
+//         const items = res.data;
+//         this.setState({
+//             itemList: items
 //         });
+//     })
+//     .catch(error => console.log("Error is " + error));
 // }
 
    
@@ -71,21 +82,26 @@ class App extends Component  {
     render() {
         return (
         <div>
-             
+        <Switch>
+        <Route path="/Second" 
+        render={() => <Second index={this.state.currentIndex}
+                        Right={this.swipeRight}
+                        Left={this.swipeLeft}/>}/>
+        <Route path="/Basket"
+        render={() => <Basket basket={this.state.rail}/>}/>
+
             <Swipeable onSwipedRight={this.swipeRight}
                        onSwipedLeft={this.swipeLeft}>
-              
+                <Header />     
                 <Slide classname="slide" 
                     source={product[this.state.currentIndex].SOURCE}
+                    id={product[this.state.currentIndex].ID} />
+                <Nav />
+                <Info 
                     name={product[this.state.currentIndex].NAME}
-                    price={product[this.state.currentIndex].PRICE}
-                    id={product[this.state.currentIndex].ID}>
-                  
-                </Slide>
-            
-             
+                    price={product[this.state.currentIndex].PRICE} />
             </Swipeable>
-  
+        </Switch>
         </div>
         );
     }    

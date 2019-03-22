@@ -3,31 +3,22 @@ import './Slider.css'
 import 'tachyons';
 import ReactSVG from 'react-svg';
 import Header from './Header';
-import Unlike from './Unlike';
-import Like from './Like'
+import Second from './Second';
+import { Route, Link, Switch } from 'react-router-dom';
+import App from './App';
+import Nav from './Navigation';
 
 const Slide = ({ source, name, price, id }) => {
         
         return (
         <div className = "container">
+
                 <div id="slide" className="tc" >
-                        <div id="header">
-                                <Header />
-                                <ReactSVG id="filter"
-                                src = "filter.svg"></ReactSVG>
-                                <ReactSVG id="basket"
-                                src="basket.svg"></ReactSVG>
-                        </div>
                         <img src={source}  alt=""/>
-                        <div id = "thumb" >
-                           <div id="Unlike"><Unlike /></div>
-                           <div id="Like"><Like /></div>
-                        </div>
-                        <h2>{name}</h2>
-                        <h3>R{price}</h3>
-                </div>   
-                                
+                </div> 
+  
         </div>
+
         );
 }
 

@@ -2,16 +2,29 @@
 
 .container {
     position: relative;
+    display: grid;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 
 #slide img {
+    margin: 0;
+    padding: 0;
     width: 100vw;
-    height: 100vh;
-    size: cover; 
+    height: auto;
+    size: cover;
+    border: 1px solid white;
+    border-radius: 2%; 
 }
 
 #slide {
+    margin: 0;
+    padding: 0;
     display: grid;
     grid-template-rows: auto;
     position: relative;
@@ -23,43 +36,10 @@
 }
 
 
- #thumb {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-self: center;
-    z-index: 1;
-} 
-
-#Unlike {
-    position: absolute;
-    top: 35%;
-}
-
-#Like {
-    position: absolute;
-    top: 35%;
-    left: 84%;
-}
 
 #header {
     position: absolute;
+    margin: 0;
+    padding: 0;
 }
 
-#header header {
-    margin-top: 20px; 
-    color: white;
-}
-
-#filter svg {
-    left: 2px;
-    position: absolute;
-    top: 70%;
-    fill: black;
-}
-
-#basket svg {
-    position: absolute;
-    top: 70%;
-    right: 2px;
-}

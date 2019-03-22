@@ -1,14 +1,12 @@
 import React from 'react';
-import ReactSVG from 'react-svg';
 
 let style = {
-    display: 'block',
+    display: 'flex',
     width: '100vw',
     height: '12vh',
     position: 'relative',
-    // fontFamily: 'Staatliches, cursive',
-    fontSize: '40px',
-    
+    fontFamily: 'Raleway, sans-serif',
+    fontSize: '40px', 
     zIndex: 2,
     top: '0',
     left: '0',
@@ -16,7 +14,7 @@ let style = {
     justifyContent: 'center',
     backgroundColor: 'transparent',
     overflow: 'hidden',
-    borderBottom: '3px solid grey',
+    borderBottom: '3px solid grey'
 }
 
 const Header = () => {

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ParkerZA/Styler.git/precache-manifest.46ec3c7bf3783d7725343b14682dd037.js"
+  "/Styler/precache-manifest.b23b0f2844a591cdde1279bd49712698.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/ParkerZA/Styler.git/index.html", {
+workbox.routing.registerNavigationRoute("/Styler/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
